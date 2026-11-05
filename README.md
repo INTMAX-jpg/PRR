@@ -64,4 +64,4 @@ The plotting code requires Times New Roman. Supply `--font-file /path/to/times.t
 
 The submitted draft is checked using CPU artifact recomputation, dataset construction checks, a source/dependency audit, and behavior-runner parity checks. Model inference is a separate execution step; the packaging checks do not assert a fresh GPU reproduction of every reported estimate.
 
-See [CITATION.cff](CITATION.cff). License selection is pending confirmation by the author team; see [LICENSE_STATUS.txt](LICENSE_STATUS.txt).
+See [CITATION.cff](CITATION.cff). 
