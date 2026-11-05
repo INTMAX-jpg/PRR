@@ -1,0 +1,58 @@
+{
+  "n_complete_paired_base": 500,
+  "clean_test_preference_agreement": 0.89375,
+  "clean_test_balanced_agreement": 0.8928980526918671,
+  "clean_test_option_probability_r2": 0.7100284170029678,
+  "clean_test_option_probability_kl": 0.2064655001820848,
+  "restoration_output_gap_delta": 0.0857693271738338,
+  "restoration_output_gap_delta_ci_low": 0.034514726515171595,
+  "restoration_readout_gap_delta": 0.8525027315322666,
+  "restoration_readout_gap_delta_ci_low": 0.7827007812049873,
+  "restoration_delta_spearman": 0.1119434727788589,
+  "restoration_delta_pearson": 0.0972473132801373,
+  "restoration_delta_sign_agreement": 0.674,
+  "baseline_output_wrong_n": 375,
+  "baseline_readout_wrong_n": 336,
+  "restored_output_recovery_among_baseline_wrong": 0.12266666666666666,
+  "restored_readout_recovery_among_baseline_wrong": 0.8035714285714286,
+  "n_output_bias_surface_repairs": 211,
+  "output_bias_readout_wrong_rate": 0.6635071090047393,
+  "output_bias_readout_wrong_ci_low": 0.5973329945915588,
+  "output_bias_readout_wrong_ci_high": 0.7238340668255169,
+  "output_bias_readout_probability_delta_max_abs": 0.0,
+  "matched_minus_controls": {
+    "random_orthogonal": {
+      "control": "random_orthogonal",
+      "n_base": 500,
+      "output_difference": 0.07835517798363113,
+      "output_ci_low": 0.02404956720008082,
+      "output_ci_high": 0.1319558602000537,
+      "readout_difference": 0.8198891244684668,
+      "readout_ci_low": 0.7488736170123812,
+      "readout_ci_high": 0.8914878062436202
+    },
+    "shuffled_cross_item": {
+      "control": "shuffled_cross_item",
+      "n_base": 500,
+      "output_difference": 0.011060025695627636,
+      "output_ci_low": -0.041936830942462894,
+      "output_ci_high": 0.06204487647388744,
+      "readout_difference": 0.623248853964007,
+      "readout_ci_low": 0.5395561518662847,
+      "readout_ci_high": 0.7057949774758174
+    }
+  },
+  "gates": {
+    "target_500_complete_paired_base": true,
+    "clean_test_preference_agreement_gte_0p90": false,
+    "clean_test_option_probability_r2_gte_0p95": false,
+    "clean_test_option_probability_kl_lte_0p02": false,
+    "restoration_output_ci_above_zero": true,
+    "restoration_readout_ci_above_zero": true,
+    "restoration_delta_spearman_gte_0p50": false,
+    "matched_output_exceeds_controls": false,
+    "matched_readout_exceeds_controls": true,
+    "output_bias_readout_unchanged": true
+  },
+  "all_gates_pass": false
+}

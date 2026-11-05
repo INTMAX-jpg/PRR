@@ -1,0 +1,31 @@
+{
+  "method": "option_probability_affine_softmax",
+  "clean_test_preference_agreement": 0.9875518672199172,
+  "clean_test_balanced_agreement": 0.9867299061607508,
+  "clean_test_option_probability_kl": 0.0078027665025988,
+  "clean_test_probability_gap_r2": 0.9917493332973708,
+  "restoration_delta_spearman": 0.9514812870321758,
+  "restoration_delta_pearson": 0.9750564377283704,
+  "restoration_delta_sign_agreement": 0.99,
+  "n_output_bias_surface_repairs": 169,
+  "output_bias_readout_pairwise_wrong_rate": 0.9940828402366864,
+  "output_bias_readout_pairwise_wrong_ci_low": 0.9822485207100592,
+  "output_bias_readout_pairwise_wrong_ci_high": 1.0,
+  "output_bias_readout_exact_wrong_rate": 0.9881656804733728,
+  "output_bias_readout_exact_wrong_ci_low": 0.9704142011834319,
+  "output_bias_readout_exact_wrong_ci_high": 1.0,
+  "output_bias_readout_probability_delta_max_abs": 0.0,
+  "output_bias_output_probability_gap_delta_mean": 1.4944719810445335,
+  "output_bias_readout_probability_gap_delta_mean": 0.0,
+  "gates": {
+    "clean_test_preference_agreement_gte_0p80": true,
+    "clean_test_balanced_agreement_gte_0p75": true,
+    "clean_test_probability_gap_r2_gte_0p50": true,
+    "restoration_spearman_gte_0p50": true,
+    "restoration_sign_agreement_gte_0p75": true,
+    "at_least_20_output_bias_surface_repairs": true,
+    "output_bias_readout_distribution_is_unchanged": true,
+    "majority_of_surface_repairs_remain_readout_wrong_aligned": true
+  },
+  "all_gates_pass": true
+}

@@ -1,0 +1,155 @@
+{
+  "status": "passed",
+  "scope": "CPU recomputation and consistency checks of the supplied numerical artifacts; no new model inference",
+  "checks": [
+    {
+      "check": "heldout_fidelity",
+      "task_model": "mmlu",
+      "n": 627,
+      "agreement": 0.9728867623604466,
+      "r2": 0.9945079406838646,
+      "passed": true
+    },
+    {
+      "check": "heldout_fidelity",
+      "task_model": "arc",
+      "n": 241,
+      "agreement": 0.9875518672199171,
+      "r2": 0.99417936950899,
+      "passed": true
+    },
+    {
+      "check": "heldout_fidelity",
+      "task_model": "gsm_qwen15b",
+      "n": 160,
+      "agreement": 0.85,
+      "r2": 0.6128568716792026,
+      "passed": true
+    },
+    {
+      "check": "heldout_fidelity",
+      "task_model": "gsm_qwen7b",
+      "n": 160,
+      "agreement": 0.89375,
+      "r2": 0.7100284170029678,
+      "passed": true
+    },
+    {
+      "check": "heldout_fidelity",
+      "task_model": "gsm_qwen3_17b",
+      "n": 160,
+      "agreement": 0.8,
+      "r2": 0.5909400508596118,
+      "passed": true
+    },
+    {
+      "check": "natural_T4_and_trajectory",
+      "task": "mmlu",
+      "n": 225,
+      "strict_cases": 24,
+      "mean_gap": 0.03394106401079364,
+      "passed": true
+    },
+    {
+      "check": "natural_T4_and_trajectory",
+      "task": "arc",
+      "n": 135,
+      "strict_cases": 14,
+      "mean_gap": 0.03924580802441654,
+      "passed": true
+    },
+    {
+      "check": "gsm_paired_causal",
+      "model": "qwen15b",
+      "n": 500,
+      "effects": {
+        "clean_state_restoration": 0.2803271790792324,
+        "random_orthogonal": 0.011035103644383064,
+        "shuffled_cross_item": 0.0029278502122379955
+      },
+      "corrected_outputs": 340,
+      "remaining_wrong_preference": 0.5294117647058824,
+      "passed": true
+    },
+    {
+      "check": "gsm_paired_causal",
+      "model": "qwen7b",
+      "n": 500,
+      "effects": {
+        "clean_state_restoration": 0.8525027315322666,
+        "random_orthogonal": 0.03261360706379971,
+        "shuffled_cross_item": 0.22925387756825955
+      },
+      "corrected_outputs": 211,
+      "remaining_wrong_preference": 0.6635071090047393,
+      "passed": true
+    },
+    {
+      "check": "gsm_paired_causal",
+      "model": "qwen3_17b",
+      "n": 500,
+      "effects": {
+        "clean_state_restoration": 0.5929284074023967,
+        "random_orthogonal": 0.09391463562450257,
+        "shuffled_cross_item": 0.13543834770494545
+      },
+      "corrected_outputs": 153,
+      "remaining_wrong_preference": 0.6993464052287581,
+      "passed": true
+    },
+    {
+      "check": "pressure_family_estimates",
+      "model": "qwen15b",
+      "passed": true
+    },
+    {
+      "check": "pressure_family_estimates",
+      "model": "qwen7b",
+      "passed": true
+    },
+    {
+      "check": "newer_model_filtering",
+      "model": "qwen3_0_6b",
+      "counts": [
+        644,
+        473,
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "check": "newer_model_filtering",
+      "model": "qwen3_1_7b",
+      "counts": [
+        978,
+        406,
+        39,
+        5
+      ],
+      "passed": true
+    },
+    {
+      "check": "newer_model_filtering",
+      "model": "qwen3_8b",
+      "counts": [
+        999,
+        0,
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "check": "newer_model_filtering",
+      "model": "gemma3_12b_it",
+      "counts": [
+        1000,
+        0,
+        0,
+        0
+      ],
+      "passed": true
+    }
+  ]
+}

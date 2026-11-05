@@ -1,0 +1,8 @@
+{
+  "source": "archived Experiment B runtime metadata",
+  "python": "3.10.12",
+  "torch": "2.6.0+cu124",
+  "transformers": "4.44.2",
+  "pandas": "2.2.2",
+  "scope": "original Qwen2.5 pressure-family behavior"
+}

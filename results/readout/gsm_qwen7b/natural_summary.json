@@ -1,0 +1,15 @@
+{
+  "n_surface_recovered_freeform": 302,
+  "target_T0_minus_T4_gold_probability": 0.5969655059333562,
+  "target_T0_minus_T4_gold_probability_ci_low": 0.5487088867581327,
+  "target_T0_minus_T4_gold_probability_ci_high": 0.6457890626305536,
+  "readout_T0_minus_T4_gold_probability": 0.28661512817155227,
+  "readout_T0_minus_T4_gold_probability_ci_low": 0.25066057930641966,
+  "readout_T0_minus_T4_gold_probability_ci_high": 0.3247867005555748,
+  "target_T5_minus_T1_wrong_probability": 0.3403479200195841,
+  "target_T5_minus_T1_wrong_probability_ci_low": 0.29455655285811866,
+  "target_T5_minus_T1_wrong_probability_ci_high": 0.38829205669440187,
+  "readout_T5_minus_T1_wrong_probability": 0.30344208698275055,
+  "readout_T5_minus_T1_wrong_probability_ci_low": 0.2712708690021246,
+  "readout_T5_minus_T1_wrong_probability_ci_high": 0.33558692080659425
+}

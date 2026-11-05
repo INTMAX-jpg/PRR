@@ -1,0 +1,44 @@
+{
+  "stage": 17,
+  "protocol": "GSM8K free-form CoT; exact numeric extraction; no A/B/C/D constrained scoring",
+  "input_files": [
+    "runs/qwen15b_stage17_gsm8k_freeform_500/generations_shard_00.jsonl",
+    "runs/qwen15b_stage17_gsm8k_freeform_500/generations_shard_01.jsonl",
+    "runs/qwen15b_stage17_gsm8k_freeform_500/generations_shard_02.jsonl"
+  ],
+  "N_total": 500,
+  "N_init": 325,
+  "N_hard_target": 207,
+  "N_surface_rec": 144,
+  "PFR_out": 0.6369230769230769,
+  "RSR_out": 0.6956521739130435,
+  "RV_out": 0.3125,
+  "T1_wrong_target_rate_surface_rec": 0.041666666666666664,
+  "T5_wrong_target_rate_surface_rec": 0.3541666666666667,
+  "N_hard_any_error": 232,
+  "PFR_any_error_T3": 0.7138461538461538,
+  "N_surface_rec_after_any_error": 158,
+  "RSR_after_any_error_T4": 0.6810344827586207,
+  "n_boot": 10000,
+  "bootstrap_seed": 1701,
+  "bootstrap_95ci": {
+    "PFR_out": {
+      "n": 325,
+      "point": 0.6369230769230769,
+      "ci_low": 0.5846153846153846,
+      "ci_high": 0.6892307692307692
+    },
+    "RSR_out": {
+      "n": 207,
+      "point": 0.6956521739130435,
+      "ci_low": 0.6328502415458938,
+      "ci_high": 0.7584541062801933
+    },
+    "RV_out": {
+      "n": 144,
+      "point": 0.3125,
+      "ci_low": 0.2361111111111111,
+      "ci_high": 0.3958333333333333
+    }
+  }
+}

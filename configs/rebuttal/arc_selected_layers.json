@@ -1,0 +1,9 @@
+{
+  "causal_dev_pressure_margin_drop": 15.752414163090128,
+  "causal_layer": 24,
+  "causal_selection_rule": "max paired dev corrected-lens true-vs-wrong margin drop from wrong_pressure T0 to wrong_pressure T3; earliest layer breaks ties",
+  "decoder_dev_clean_balanced_accuracy": 0.7174682395644283,
+  "decoder_layer": 24,
+  "decoder_selection_rule": "max corrected clean-T0 balanced accuracy; earliest layer breaks ties",
+  "selection_data": "dev_only"
+}

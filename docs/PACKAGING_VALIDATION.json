@@ -1,0 +1,76 @@
+{
+  "validation_scope": {
+    "record_type": "historical_packaging_validation",
+    "package_stage": "before the v5 limited fixes",
+    "interpretation": "These checks describe the package at that earlier stage. The v5 archive has a separate full verification report supplied with the delivery; this historical record is not a claim that all v5 code is unchanged."
+  },
+  "gpu_model_execution": false,
+  "checks": [
+    {
+      "check": "runner_no_hard_sample_gate_and_q14_auto",
+      "passed": true
+    },
+    {
+      "check": "weak_input_2000_items_exact_T5_and_neutral_fillers",
+      "passed": true,
+      "base_items": 2000
+    },
+    {
+      "check": "weak_original_formula_parity",
+      "passed": true,
+      "n": 1114,
+      "effect": -0.2841678534947793,
+      "interval": [
+        -0.41922308781717155,
+        -0.1596152309905776
+      ]
+    },
+    {
+      "check": "q15_pressure_surface_points_and_all_intervals_match",
+      "passed": true,
+      "base_items": 200,
+      "bootstrap": 10000,
+      "seed": 2508,
+      "preceding_panel1_items": 500
+    },
+    {
+      "check": "q7_original_preparation_fixture",
+      "passed": true,
+      "input_hash_matches_original": true,
+      "base_items": 500,
+      "forks": 8000,
+      "recovered_fixture": 254,
+      "note": "Synthetic history fixture validates code only; not a GPU result reproduction."
+    },
+    {
+      "check": "cw_historical_algorithm_parity",
+      "passed": true,
+      "full_interval": [
+        0.4224783379388642,
+        0.7498251296275044
+      ],
+      "standard_bootstrap_ci": false
+    },
+    {
+      "check": "syntax_workflow_dry_runs_and_legacy_readout_dependency_scan",
+      "passed": true,
+      "python_files": 46
+    },
+    {
+      "check": "workflow_utf8_and_four_dry_runs",
+      "passed": true,
+      "workflows": [
+        "weak_only_qwen15b",
+        "pressure_qwen7b",
+        "mcq_mmlu",
+        "mcq_arc"
+      ]
+    },
+    {
+      "check": "existing_result_and_figure_bytes_unchanged",
+      "passed": true,
+      "files": 76
+    }
+  ],
+  "status": "passed"
+}

@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying paper when using these materials."
+title: "Surface Recovery Is Not State Recovery: Pressure–Recovery–Relapse in Multi-Turn LLMs"
+type: software
+authors:
+  - family-names: Huang
+    given-names: Zixi
+  - family-names: Chang
+    given-names: Hankun
+  - family-names: Geng
+    given-names: Xueli
+  - family-names: Mu
+    given-names: Xutong
+version: 0.1.0-draft

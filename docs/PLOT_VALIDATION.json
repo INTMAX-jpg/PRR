@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "script": "scripts/plot_rebuttal.py",
+  "generated_outputs": [
+    "probability_trajectory.pdf",
+    "gsm_causal.pdf"
+  ],
+  "font": "Times New Roman",
+  "font_family_verified_in_generated_pdfs": true,
+  "text_within_page_bounds": true,
+  "rendered_visual_review": "passed",
+  "scope": "Rendering the supplied numerical statistics; not a new experiment"
+}

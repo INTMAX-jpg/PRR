@@ -1,0 +1,4 @@
+method,mode,n,output_correct_rate,output_designated_wrong_rate,output_gold_probability_mean,output_probability_gap_mean,readout_correct_rate,readout_designated_wrong_rate,readout_pairwise_wrong_alignment_rate,readout_gold_probability_mean,readout_probability_gap_mean
+option_probability_affine_softmax,clean_state_restoration,200,0.575,0.11,0.5473692406513588,0.42455620624869317,0.54,0.14,0.275,0.5329684070928488,0.37860384096580246
+option_probability_affine_softmax,output_logit_bias,200,0.845,0.155,0.7770212242782867,0.561150252869388,0.02,0.93,0.975,0.0369861379787137,-0.865670490318686
+option_probability_affine_softmax,target_baseline,200,0.02,0.935,0.03391892844266579,-0.8763475612669163,0.02,0.93,0.975,0.0369861379787137,-0.865670490318686

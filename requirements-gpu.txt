@@ -1,0 +1,10 @@
+# Installation starting point; model runs use the per-experiment settings in docs/REPRODUCING.md.
+torch>=2.6,<3
+transformers>=4.51,<5
+accelerate>=0.26
+scikit-learn>=1.3,<2
+joblib>=1.3
+PyYAML>=6
+datasets>=2.19
+tqdm>=4.66
+scipy>=1.10
