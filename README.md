@@ -1,16 +1,26 @@
-<h1 align="center">PRR</h1>
+<h1 align="center">Surface Recovery Is Not State Recovery:<br>Pressure–Recovery–Relapse in Multi-Turn LLMs</h1>
+
+<p align="center"><strong>PRR</strong> · Pressure–Recovery–Relapse</p>
 
 <p align="center">
-  <strong>Surface Recovery Is Not State Recovery:<br>Pressure–Recovery–Relapse in Multi-Turn LLMs</strong>
+  Zixi Huang<sup>1,*</sup> &nbsp; Hankun Chang<sup>1,*</sup> &nbsp;
+  Xueli Geng<sup>1</sup> &nbsp; Xutong Mu<sup>1,†</sup><br>
+  <sup>1</sup>Xidian University, Xi'an, China<br>
+  <sub>* Equal contribution &nbsp; † Corresponding author</sub>
 </p>
 
 <p align="center">
-  <a href="https://huggingface.co/datasets/yanHuangzixi/PRR-ClosedWorld-2K">🤗 Dataset on Hugging Face · PRR-ClosedWorld-2K</a>
+  <a href="https://huggingface.co/datasets/yanHuangzixi/PRR-ClosedWorld-2K"><img src="https://img.shields.io/badge/Hugging%20Face-Dataset-FFD21E?style=flat-square&amp;logo=huggingface&amp;logoColor=white" alt="Hugging Face Dataset" height="30"></a>
 </p>
 
+<p align="center"><strong>English</strong> | <a href="README_zh-CN.md">简体中文</a></p>
+
 <p align="center">
-  <strong>English</strong> | <a href="README_zh-CN.md">简体中文</a>
+  <a href="figures/prr_protocol.pdf"><img src="figures/prr_protocol.png" alt="PRR protocol: T0 neutral start, T1 weak pressure, T2 pressure ramp, T3 hard pressure, T4 pressure removal, and T5 renewed weak pressure" width="100%"></a><br>
+  <em>The PRR protocol: ramp up pressure, remove it, and test recovery stability under renewed weak pressure.</em>
 </p>
+
+---
 
 This repository provides the CW generator and behavior runners, final-rebuttal probability-readout and intervention implementations, and the numerical artifacts listed in [MATERIALS.csv](MATERIALS.csv). That inventory identifies the files and validation supplied for each experiment group.
 
@@ -60,7 +70,7 @@ New GSM behavior summaries use deterministic, sorted-item resampling and version
 
 ## Figures
 
-`figures/` contains the two supplied rebuttal figures. To render the corresponding statistics:
+`figures/` contains the PRR protocol overview shown above (PNG and PDF) and the two supplied rebuttal figures. To render the rebuttal statistics:
 
 ```bash
 python scripts/plot_rebuttal.py --outdir outputs/rebuttal_figures

@@ -1,16 +1,26 @@
-<h1 align="center">PRR</h1>
+<h1 align="center">Surface Recovery Is Not State Recovery:<br>Pressure–Recovery–Relapse in Multi-Turn LLMs</h1>
+
+<p align="center"><strong>PRR</strong> · Pressure–Recovery–Relapse</p>
 
 <p align="center">
-  <strong>Surface Recovery Is Not State Recovery:<br>Pressure–Recovery–Relapse in Multi-Turn LLMs</strong>
+  Zixi Huang<sup>1,*</sup> &nbsp; Hankun Chang<sup>1,*</sup> &nbsp;
+  Xueli Geng<sup>1</sup> &nbsp; Xutong Mu<sup>1,†</sup><br>
+  <sup>1</sup>Xidian University, Xi'an, China<br>
+  <sub>* 共同第一作者 &nbsp; † 通讯作者</sub>
 </p>
 
 <p align="center">
-  <a href="https://huggingface.co/datasets/yanHuangzixi/PRR-ClosedWorld-2K">🤗 Hugging Face 数据集 · PRR-ClosedWorld-2K</a>
+  <a href="https://huggingface.co/datasets/yanHuangzixi/PRR-ClosedWorld-2K"><img src="https://img.shields.io/badge/Hugging%20Face-Dataset-FFD21E?style=flat-square&amp;logo=huggingface&amp;logoColor=white" alt="Hugging Face Dataset" height="30"></a>
 </p>
 
+<p align="center"><a href="README.md">English</a> | <strong>简体中文</strong></p>
+
 <p align="center">
-  <a href="README.md">English</a> | <strong>简体中文</strong>
+  <a href="figures/prr_protocol.pdf"><img src="figures/prr_protocol.png" alt="PRR protocol: T0 neutral start, T1 weak pressure, T2 pressure ramp, T3 hard pressure, T4 pressure removal, and T5 renewed weak pressure" width="100%"></a><br>
+  <em>PRR 协议：逐步施压、撤压，并在再次施加弱压力后评估恢复的稳定性。</em>
 </p>
+
+---
 
 本仓库提供 CW 数据生成器与行为实验程序、最终 rebuttal 阶段的概率 readout 与干预实现，以及 [MATERIALS.csv](MATERIALS.csv) 中列出的数值结果文件。该清单说明了各组实验提供的材料及其验证情况。
 
@@ -60,7 +70,7 @@ python scripts/analyze_behavior.py --metadata runs/cw_qwen7b/metadata.csv --out 
 
 ## 图表
 
-`figures/` 包含两张配套的 rebuttal 结果图。可用以下命令绘制对应统计结果：
+`figures/` 包含上方 PRR 协议图的 PNG／PDF，以及两张配套的 rebuttal 结果图。可用以下命令绘制 rebuttal 统计结果：
 
 ```bash
 python scripts/plot_rebuttal.py --outdir outputs/rebuttal_figures
