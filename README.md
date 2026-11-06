@@ -87,6 +87,6 @@ The English and Chinese READMEs (`README.md` and `README_zh-CN.md`), the manifes
 
 Refresh the manifest after changing, adding, removing, or renaming a covered file. Hashes are computed from the saved file bytes, so line-ending changes in covered files also require a refresh. The integrity check establishes consistency with the recorded files; numerical recomputation provides a separate check on the supplied results.
 
-## Validation and citation
+## Citation
 
 See [CITATION.cff](CITATION.cff). Original code is licensed under the MIT License; see [LICENSE](LICENSE). Third-party assets remain subject to their respective licenses.
