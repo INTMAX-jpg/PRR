@@ -89,6 +89,4 @@ Refresh the manifest after changing, adding, removing, or renaming a covered fil
 
 ## Validation and citation
 
-We validate the supplied materials through CPU artifact recomputation, dataset construction checks, a source/dependency audit, and behavior-runner parity checks. Model inference is a separate execution step; the packaging checks do not assert a fresh GPU reproduction of every reported estimate.
-
 See [CITATION.cff](CITATION.cff). Original code is licensed under the MIT License; see [LICENSE](LICENSE). Third-party assets remain subject to their respective licenses.
