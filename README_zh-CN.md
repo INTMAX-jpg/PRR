@@ -69,16 +69,6 @@ python scripts/analyze_behavior.py --metadata runs/cw_qwen7b/metadata.csv --out 
 
 新的 GSM 行为汇总采用固定样本排序后的确定性重采样，并使用带版本标记的文件名。论文报告的区间保留在冻结结果文件中，详见 [GSM_BEHAVIOR_INTERVALS.md](docs/GSM_BEHAVIOR_INTERVALS.md)。
 
-## 图表
-
-`figures/` 包含上方 PRR 协议图的 PNG／PDF，以及两张配套的 rebuttal 结果图。可用以下命令绘制 rebuttal 统计结果：
-
-```bash
-python scripts/plot_rebuttal.py --outdir outputs/rebuttal_figures
-```
-
-绘图程序使用 Times New Roman。若系统尚未安装该字体，请通过 `--font-file /path/to/times.ttf` 指定字体文件。字体由用户的操作系统或字体安装提供。
-
 ## 目录结构
 
 - `src/prr_behavior/`：行为实验运行逻辑与原 CW 生成器。

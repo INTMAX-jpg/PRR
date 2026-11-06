@@ -69,16 +69,6 @@ See [REPRODUCING.md](docs/REPRODUCING.md) for model acquisition, source datasets
 
 New GSM behavior summaries use deterministic, sorted-item resampling and versioned filenames. The paper-reported intervals remain in the frozen result files; see [GSM_BEHAVIOR_INTERVALS.md](docs/GSM_BEHAVIOR_INTERVALS.md).
 
-## Figures
-
-`figures/` contains the PRR protocol overview shown above (PNG and PDF) and the two supplied rebuttal figures. To render the rebuttal statistics:
-
-```bash
-python scripts/plot_rebuttal.py --outdir outputs/rebuttal_figures
-```
-
-The plotting code requires Times New Roman. Supply `--font-file /path/to/times.ttf` when the font is not installed. Fonts are supplied by the user’s operating system or font installation.
-
 ## Organization
 
 - `src/prr_behavior/`: behavior runtime and the original CW generator.
