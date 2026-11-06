@@ -157,14 +157,6 @@
       "bytes": 211,
       "sha256": "58152f2237a3647dc080daee5b8907006d81ca06fadcf8f0a655b19e3c18be54"
     },
-    "figures/gsm_causal.pdf": {
-      "bytes": 90894,
-      "sha256": "5d77bf8340559adcea9d7b1c35c7fffe973e35c7935ab3df960564368d522b30"
-    },
-    "figures/probability_trajectory.pdf": {
-      "bytes": 93200,
-      "sha256": "902d523762a268cd71c1dab2647ccd45be70e22c50773b034ac81567020b196a"
-    },
     "figures/prr_protocol.pdf": {
       "bytes": 116036,
       "sha256": "f80d22fc2503933cecd27829c01cf9dc5fdb8d7d89e5ba4eff0042c10dafd20c"
