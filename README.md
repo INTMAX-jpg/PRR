@@ -1,23 +1,40 @@
-# PRR paper materials
+<h1 align="center">PRR</h1>
 
-Materials accompanying **Surface Recovery Is Not State Recovery: Pressure–Recovery–Relapse in Multi-Turn LLMs**.
+<p align="center">
+  <strong>Surface Recovery Is Not State Recovery:<br>Pressure–Recovery–Relapse in Multi-Turn LLMs</strong>
+</p>
+
+<p align="center">
+  <a href="https://huggingface.co/datasets/yanHuangzixi/PRR-ClosedWorld-2K">🤗 Dataset on Hugging Face · PRR-ClosedWorld-2K</a>
+</p>
+
+<p align="center">
+  <strong>English</strong> | <a href="README_zh-CN.md">简体中文</a>
+</p>
 
 This repository provides the CW generator and behavior runners, final-rebuttal probability-readout and intervention implementations, and the numerical artifacts listed in [MATERIALS.csv](MATERIALS.csv). That inventory identifies the files and validation supplied for each experiment group.
 
 ## Quick start: verify the supplied results
 
-Use Python 3.10 or newer. From the repository root:
+Use Python 3.10 or newer. To preserve the file bytes recorded in the integrity manifest, clone without automatic line-ending conversion:
+
+```bash
+git -c core.autocrlf=false clone https://github.com/INTMAX-jpg/PRR.git
+cd PRR
+```
+
+From the repository root:
 
 ```bash
 python -m pip install -e .
 python scripts/verify_results.py --out outputs/verification.json
 ```
 
-This command checks file hashes and recomputes held-out readout fidelity, natural-recovery quantities, GSM8K paired intervention effects, pressure-family estimates, and newer-model filtering counts. It uses the supplied files and runs on CPU.
+This command checks the byte length and SHA-256 hash of each file listed in [artifact_manifest.json](artifact_manifest.json), then recomputes held-out readout fidelity, natural-recovery quantities, GSM8K paired intervention effects, pressure-family estimates, and newer-model filtering counts. It uses the supplied files and runs on CPU.
 
 ## CW dataset and behavior
 
-The companion CW dataset contains 2,000 base items and 10,000 matched trajectory templates. The generator reproduces the frozen construction and record order:
+The companion [PRR-ClosedWorld-2K dataset](https://huggingface.co/datasets/yanHuangzixi/PRR-ClosedWorld-2K) contains 2,000 base items and 10,000 matched trajectory templates. The generator reproduces the frozen construction and record order:
 
 ```bash
 python scripts/generate_cw.py --out outputs/cw_2000.jsonl
@@ -58,10 +75,19 @@ The plotting code requires Times New Roman. Supply `--font-file /path/to/times.t
 - `scripts/`: preparation, execution, analysis, verification, and plotting.
 - `configs/`: portable model and experiment settings.
 - `data/`: frozen synthetic inputs, cohort information, and causal inputs.
+- `data/mul_choi_que/mmlu/patching_rows.csv.gz` and `data/mul_choi_que/arc/patching_rows.csv.gz`: archived MMLU and ARC patching rows.
 - `results/`: the artifacts identified in `MATERIALS.csv`.
+
+## File inventory and integrity
+
+[MATERIALS.csv](MATERIALS.csv) describes the materials supplied for each experiment group. [artifact_manifest.json](artifact_manifest.json) records file paths, byte lengths, and SHA-256 hashes for experiment code, configurations, supplied data and results, and supporting project files such as `MATERIALS.csv` and `LICENSE`. The manifest uses the current `data/mul_choi_que/` paths.
+
+The English and Chinese READMEs (`README.md` and `README_zh-CN.md`), the manifest itself, and operating-system metadata (`.DS_Store`) are excluded. Updating either README, including adding a paper link or revising the translation, does not require changing the manifest.
+
+Refresh the manifest after changing, adding, removing, or renaming a covered file. Hashes are computed from the saved file bytes, so line-ending changes in covered files also require a refresh. The integrity check establishes consistency with the recorded files; numerical recomputation provides a separate check on the supplied results.
 
 ## Validation and citation
 
-The submitted draft is checked using CPU artifact recomputation, dataset construction checks, a source/dependency audit, and behavior-runner parity checks. Model inference is a separate execution step; the packaging checks do not assert a fresh GPU reproduction of every reported estimate.
+We validate the supplied materials through CPU artifact recomputation, dataset construction checks, a source/dependency audit, and behavior-runner parity checks. Model inference is a separate execution step; the packaging checks do not assert a fresh GPU reproduction of every reported estimate.
 
 See [CITATION.cff](CITATION.cff). Original code is licensed under the MIT License; see [LICENSE](LICENSE). Third-party assets remain subject to their respective licenses.
