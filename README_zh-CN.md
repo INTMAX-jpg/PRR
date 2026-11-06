@@ -4,8 +4,9 @@
 
 <p align="center">
   Zixi Huang<sup>1,*</sup> &nbsp; Hankun Chang<sup>1,*</sup> &nbsp;
-  Xueli Geng<sup>1</sup> &nbsp; Xutong Mu<sup>1,†</sup><br>
-  <sup>1</sup>Xidian University, Xi'an, China<br>
+  Xueli Geng<sup>2</sup> &nbsp; Xutong Mu<sup>1,†</sup><br>
+  <sup>1</sup>School of Computer Science and Technology, Xidian University<br>
+  <sup>2</sup>School of Artificial Intelligence, Xidian University<br>
   <sub>* 共同第一作者 &nbsp; † 通讯作者</sub>
 </p>
 
