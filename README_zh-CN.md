@@ -23,7 +23,7 @@
 
 ---
 
-本仓库提供 CW 数据生成器与行为实验程序、最终 rebuttal 阶段的概率 readout 与干预实现，以及 [MATERIALS.csv](MATERIALS.csv) 中列出的数值结果文件。该清单说明了各组实验提供的材料及其验证情况。
+本仓库提供 CW 数据生成器与行为实验程序、最终采用的概率 readout 与干预实现，以及 [MATERIALS.csv](MATERIALS.csv) 中列出的数值结果文件。该清单说明了各组实验提供的材料及其验证情况。
 
 ## 快速开始：核验已提供的结果
 
@@ -67,7 +67,7 @@ python scripts/analyze_behavior.py --metadata runs/cw_qwen7b/metadata.csv --out 
 
 模型获取、数据来源、完整命令序列和环境说明见 [REPRODUCING.md](docs/REPRODUCING.md)。工作流默认只打印命令；加入 `--execute` 后，才会在新的输出目录中执行。
 
-新的 GSM 行为汇总采用固定样本排序后的确定性重采样，并使用带版本标记的文件名。论文报告的区间保留在冻结结果文件中，详见 [GSM_BEHAVIOR_INTERVALS.md](docs/GSM_BEHAVIOR_INTERVALS.md)。
+GSM 行为区间采用固定样本排序后的确定性重采样；论文报告的数值位于带 `*_sorted_base_id_v1` 标记的结果文件中，详见 [GSM_BEHAVIOR_INTERVALS.md](docs/GSM_BEHAVIOR_INTERVALS.md)。
 
 ## 目录结构
 

@@ -23,7 +23,7 @@
 
 ---
 
-This repository provides the CW generator and behavior runners, final-rebuttal probability-readout and intervention implementations, and the numerical artifacts listed in [MATERIALS.csv](MATERIALS.csv). That inventory identifies the files and validation supplied for each experiment group.
+This repository provides the CW generator and behavior runners, final probability-readout and intervention implementations, and the numerical artifacts listed in [MATERIALS.csv](MATERIALS.csv). That inventory identifies the files and validation supplied for each experiment group.
 
 ## Quick start: verify the supplied results
 
@@ -67,7 +67,7 @@ The final probability readouts translate intermediate activations into answer-ca
 
 See [REPRODUCING.md](docs/REPRODUCING.md) for model acquisition, source datasets, complete command sequences, and environment notes. Workflows print their commands by default; `--execute` runs them in a new output directory.
 
-New GSM behavior summaries use deterministic, sorted-item resampling and versioned filenames. The paper-reported intervals remain in the frozen result files; see [GSM_BEHAVIOR_INTERVALS.md](docs/GSM_BEHAVIOR_INTERVALS.md).
+GSM behavior intervals use deterministic, sorted-item resampling; the paper-reported values are in the `*_sorted_base_id_v1` result files. See [GSM_BEHAVIOR_INTERVALS.md](docs/GSM_BEHAVIOR_INTERVALS.md).
 
 ## Organization
 

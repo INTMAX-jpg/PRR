@@ -1,19 +1,18 @@
-# GSM8K behavior: reported and newly computed intervals
+# GSM8K behavior intervals
 
-The paper-reported Qwen2.5-1.5B behavior results are preserved in:
+The Qwen2.5-1.5B free-form behavior results reported in the paper are in `results/behavior/gsm_qwen15b/`:
 
-- `results/behavior/gsm_qwen15b/stage17_metrics.json`
-- `results/behavior/gsm_qwen15b/stage17_bootstrap_ci.csv`
-- `results/behavior/gsm_qwen15b/scored_turns.csv`
+- `scored_turns.csv`: per-item, per-turn scored outputs (500 items).
+- `stage17_metrics_sorted_base_id_v1.json` and `stage17_bootstrap_ci_sorted_base_id_v1.csv`: the metrics and 95% intervals reported in the paper.
 
-These are the frozen reported artifacts. They contain 500 evaluated items, 325 initially correct items, 207 hard-flipped items, and 144 recovered items. The reported RV is 0.3125 with interval [0.2361111111111111, 0.3958333333333333]; the reported RSR is 144/207 with interval [0.6328502415458938, 0.7584541062801933]. The paper continues to use these reported values.
+The evaluation contains 500 items, 325 initially correct items, 207 hard-flipped items, and 144 recovered items. The reported values are PFR 0.637 [0.585, 0.689], RSR 0.696 [0.633, 0.758], and RV 0.3125 [0.236, 0.389].
 
-## New computation version
+## Bootstrap procedure
 
-`analyze_gsm8k_freeform_prr_stage17.py` now sorts the base IDs lexicographically within each metric cohort before sampling. It retains the item bootstrap, percentile calculation, default 10,000 draws, seed 1701, and the shared random-stream order PFR → RSR → RV. Cohort definitions, answer parsing, and point-estimate formulas are unchanged.
+Intervals are percentile bootstrap intervals over base items with 10,000 draws and seed 1701. Within each metric cohort, base IDs are sorted lexicographically before sampling, and a single random stream is shared in the order PFR → RSR → RV. `analyze_gsm8k_freeform_prr_stage17.py` implements this procedure and labels its output `computation_version: sorted_base_id_v1`. The paper-reported files were computed from `scored_turns.csv` with the same bootstrap routine; `scripts/verify_results.py` recomputes them on CPU.
 
-New output is identified by `result_origin: new_computation` and `computation_version: sorted_base_id_v1`. Metrics and interval files are named `stage17_metrics_sorted_base_id_v1.json` and `stage17_bootstrap_ci_sorted_base_id_v1.csv`; the generated report also bears the version suffix. The analyzer writes into a new output directory.
+## Earlier computation
 
-The historical analyzer iterated over Python sets before sampling. Its recorded random seed alone therefore did not specify the input order for finite bootstrap draws. A sorted recomputation can produce slightly different interval endpoints on identical scored rows. Such endpoints are newly computed intervals, rather than replacements for the frozen paper-reported intervals. A matching point estimate does not require identical finite-resampling endpoints.
+`stage17_metrics.json` and `stage17_bootstrap_ci.csv` come from an earlier version of the analyzer that iterated over unordered sets before sampling, so the seed alone did not fix the sampling order. Counts and point estimates are identical; only the RV upper endpoint differs (0.396 vs. 0.389). These files are retained for provenance and are not used in the paper.
 
-The workflow and plotting paths retain the frozen reported artifacts as the reference for paper figures and tables. Fresh model runs additionally depend on their model, tokenizer, dataset revision, and numerical environment; record these separately when comparing fresh predictions.
+Fresh model runs additionally depend on the model, tokenizer, dataset revision, and numerical environment; record these when comparing new generations with the supplied scored turns.

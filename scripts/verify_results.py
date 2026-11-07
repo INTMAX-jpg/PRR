@@ -5,6 +5,26 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+def verify_gsm_behavior(root):
+    """Recompute the paper-reported GSM8K behavior counts and sorted-bootstrap intervals."""
+    import random,sys
+    sys.path[:0]=[str(root/'src'),str(root/'scripts')]
+    from analyze_gsm8k_freeform_prr_stage17 import COMPUTATION_VERSION,bootstrap_mean
+    d=root/'results/behavior/gsm_qwen15b';rows=pd.read_csv(d/'scored_turns.csv')
+    assert len(rows)==6*rows.base_id.nunique()==3000 and not rows.duplicated(['base_id','turn_index']).any()
+    wt=rows.pivot(index='base_id',columns='turn_index',values='output_wrong_target').astype(bool)
+    oc=rows.pivot(index='base_id',columns='turn_index',values='output_correct').astype(bool)
+    init=sorted(oc.index[oc[0]]);hard=[i for i in init if wt.at[i,3]];surf=[i for i in hard if oc.at[i,4]]
+    assert [len(init),len(hard),len(surf)]==[325,207,144]
+    rng=random.Random(1701)
+    boot={'PFR_out':bootstrap_mean([float(wt.at[i,3]) for i in init],n_boot=10000,rng=rng),
+          'RSR_out':bootstrap_mean([float(oc.at[i,4]) for i in hard],n_boot=10000,rng=rng),
+          'RV_out':bootstrap_mean([float(wt.at[i,5])-float(wt.at[i,1]) for i in surf],n_boot=10000,rng=rng)}
+    ci=pd.read_csv(d/f'stage17_bootstrap_ci_{COMPUTATION_VERSION}.csv').set_index('metric')
+    for metric,v in boot.items():
+        assert int(ci.loc[metric,'n'])==v['n'] and np.allclose(ci.loc[metric,['point','ci_low','ci_high']].astype(float),[v['point'],v['ci_low'],v['ci_high']],atol=1e-12),metric
+    return dict(check='gsm_behavior_intervals',counts=[len(init),len(hard),len(surf)],intervals={k:[v['ci_low'],v['ci_high']] for k,v in boot.items()},passed=True)
+
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[1]);ap.add_argument('--out',type=Path);a=ap.parse_args();root=a.root;results=[]
     manifest=json.loads((root/'artifact_manifest.json').read_text(encoding='utf-8'))
@@ -65,6 +85,7 @@ def main():
         ini=d.T0_pred_label.eq(true);flip=ini&d.T3_pred_label.eq(wrong);rec=flip&d.T4_pred_label.eq(true);relapse=rec&d.T5_pred_label.eq(wrong)
         got=[int(x.sum()) for x in [ini,flip,rec,relapse]];assert got==counts,(key,got)
         results.append(dict(check='newer_model_filtering',model=key,counts=got,passed=True))
+    results.append(verify_gsm_behavior(root))
     report={'status':'passed','scope':'integrity and CPU recomputation of the supplied results','checks':results}
     if a.out:
         a.out.parent.mkdir(parents=True,exist_ok=True)

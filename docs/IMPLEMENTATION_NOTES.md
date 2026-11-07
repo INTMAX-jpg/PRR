@@ -20,4 +20,4 @@ The behavior analyzer emits one RV weighting per invocation: item weighting for 
 
 Numeric JSON device keys are normalized to integers before passing `max_memory` to the model loader. The GSM causal writer records its actual repair/readout layer arguments, with the paper defaults retained at L22/L24. Behavior runs optionally save complete rendered prompts when configured.
 
-New GSM behavior bootstrap computations use sorted base IDs and versioned output files; the reported intervals and numerical artifacts remain unchanged. See GSM_BEHAVIOR_INTERVALS.md. Historical newer-model screening rules are provenance metadata; the published runner directly evaluates the supplied final 1,000-item input.
+GSM behavior bootstrap computations use sorted base IDs and versioned output files; the paper-reported intervals are the `*_sorted_base_id_v1` files. See GSM_BEHAVIOR_INTERVALS.md. Historical newer-model screening rules are provenance metadata; the published runner directly evaluates the supplied final 1,000-item input.

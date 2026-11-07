@@ -14,8 +14,8 @@
       "sha256": "625e5766f4883042d6453e73fc6355316b2f026deb171a17c1a5a37de0ffd580"
     },
     "MATERIALS.csv": {
-      "bytes": 3509,
-      "sha256": "385cc5c7f7c8d1549d554139de11109c43de7bc51c2374e4c0731dc758ecf02c"
+      "bytes": 3579,
+      "sha256": "c05f4c3bb7c0a9f74959743697ea89d300b2d1440e05454f2c4d05ca3dde0fa7"
     },
     "configs/cw_2000/llama8b.json": {
       "bytes": 1408,
@@ -126,12 +126,12 @@
       "sha256": "05465fa75222c49d3143abdb00a59d8deac26344547c29d76dac6ccded684e86"
     },
     "docs/GSM_BEHAVIOR_INTERVALS.md": {
-      "bytes": 2114,
-      "sha256": "a062fcc852ffb89fba07805ad250c05a7afbc4d48b06243d205878f159944983"
+      "bytes": 1695,
+      "sha256": "c777157374dbba5ed0ed35f069b851e3d37f38ffe01f566bb846b01a6fe6e75c"
     },
     "docs/IMPLEMENTATION_NOTES.md": {
-      "bytes": 3661,
-      "sha256": "c6c875103d3edfd24adeb2951e64948f32f7852d3c773aeab0a3381173b992b5"
+      "bytes": 3658,
+      "sha256": "1cb88773f431a9c5ee8c6c9246355bcd03ddf2de85d4a436c1260bc1116639e9"
     },
     "docs/NUMERICAL_VALIDATION.json": {
       "bytes": 3488,
@@ -146,8 +146,8 @@
       "sha256": "3555db935fbdb7acd31a77dbc937badfdc795c20393ebb098441bfb0d2b005a5"
     },
     "docs/REPRODUCING.md": {
-      "bytes": 11373,
-      "sha256": "d6c3250f2c004c269bbfae9ce9362b1bff0f0452d1aae820d31442e4eab12a17"
+      "bytes": 11344,
+      "sha256": "a4b591cf5fda35d5a348d6098107e89cd5f1a8ea787353526f1c66085c5b14f8"
     },
     "docs/THIRD_PARTY_ASSETS.md": {
       "bytes": 1141,
@@ -181,9 +181,17 @@
       "bytes": 228,
       "sha256": "ba9d02ff7b21caa8f5c90ec510f1e00e088bc9ad8eb36ab0d90b32007a1563ac"
     },
+    "results/behavior/gsm_qwen15b/stage17_bootstrap_ci_sorted_base_id_v1.csv": {
+      "bytes": 361,
+      "sha256": "caa5e2250ff0c8d040d2da9b9fda86f22216cb1b5c908abe2247e8e3201c4d8b"
+    },
     "results/behavior/gsm_qwen15b/stage17_metrics.json": {
       "bytes": 1300,
       "sha256": "ae757f5b5ca5c5b20ef0cd41a88db3a811403a4b9820ffc1eea7d57b19413a74"
+    },
+    "results/behavior/gsm_qwen15b/stage17_metrics_sorted_base_id_v1.json": {
+      "bytes": 1510,
+      "sha256": "c06d0a10c0ff014801fb4177c3ac54ef98de67f1eeea37de9f98edd4dbe44dd6"
     },
     "results/behavior/gsm_qwen15b/stage17_turn_summary.csv": {
       "bytes": 1700,
@@ -474,8 +482,8 @@
       "sha256": "1a579a6905a99736ca1b74b0c183722ffb9e6d1353885ec3edc6b686a6e75b00"
     },
     "scripts/analyze_gsm8k_freeform_prr_stage17.py": {
-      "bytes": 15843,
-      "sha256": "76badfb62d71a12228a090881c89fe39fbedf8ad9223fe6dce071ea5c96e3613"
+      "bytes": 15804,
+      "sha256": "9184935ff478aec20d4798c49ea499d96d7f35d90538aeb48ba0c8a73842ce40"
     },
     "scripts/analyze_pressure_forks.py": {
       "bytes": 3069,
@@ -546,8 +554,8 @@
       "sha256": "8019a20a1b882edfe343037f1791e448bec1f7ea347d5a3ba31d639989df0254"
     },
     "scripts/verify_results.py": {
-      "bytes": 7058,
-      "sha256": "f4e60ce299f17debe2b7d8557d5a815628c8f156cbb70c9a72ad8112c6ac0416"
+      "bytes": 8727,
+      "sha256": "7e4315540a08f8bb6ddbbad2ee6950e6b5e7f4f966ba3584da16a13e4a2404c6"
     },
     "scripts/实验E_00_common.py": {
       "bytes": 13166,

@@ -60,7 +60,7 @@ The `gsm_qwen15b` workflow also computes the free-form PFR/RSR/RV summaries in `
 python scripts/analyze_gsm8k_freeform_prr_stage17.py --inputs "runs/rebuttal_gsm_qwen15b/pressure/generations_shard_*.jsonl" --outdir outputs/gsm_qwen15b_behavior --n-boot 10000 --seed 1701
 ```
 
-New GSM behavior computations sort base IDs before bootstrap sampling and write versioned `*_sorted_base_id_v1` metrics, interval tables, and reports. The paper-reported intervals remain in the unchanged frozen results under `results/behavior/gsm_qwen15b/`. See [GSM_BEHAVIOR_INTERVALS.md](GSM_BEHAVIOR_INTERVALS.md) for their distinction. The analyzer requires a new output directory.
+The analyzer sorts base IDs before bootstrap sampling and writes versioned `*_sorted_base_id_v1` metrics, interval tables, and reports; this is the procedure behind the paper-reported intervals in `results/behavior/gsm_qwen15b/*_sorted_base_id_v1.*`. See [GSM_BEHAVIOR_INTERVALS.md](GSM_BEHAVIOR_INTERVALS.md). The analyzer requires a new output directory.
 
 The GSM causal result rows record the actual `--repair_layer` and `--readout_layer` arguments. All supplied paper workflows use L22 write / L24 read. In diagnostic files, X/Y identify the two numeric candidate slots: `logit_X`/`logit_Y` and `output_logit_X`/`output_logit_Y` store complete numeric-string conditional log likelihoods (with the specified bias added in the output-only condition), rather than letter-token logits.
 

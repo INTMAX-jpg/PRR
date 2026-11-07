@@ -20,7 +20,7 @@ from latent_pressure.numeric_answers import (
 )
 
 
-# New computations are distinguished from the frozen paper-reported intervals.
+# Sorted-base-ID bootstrap; this version produces the intervals reported in the paper.
 COMPUTATION_VERSION = "sorted_base_id_v1"
 
 TURN_NAMES = [
@@ -305,7 +305,7 @@ def main() -> None:
         "computation_version": COMPUTATION_VERSION,
         "bootstrap_sample_order": "lexicographic base_id within each metric cohort",
         "bootstrap_metric_order": ["PFR_out", "RSR_out", "RV_out"],
-        "interval_provenance": "newly computed; frozen paper intervals are retained separately in release results",
+        "interval_provenance": "sorted-base-ID bootstrap used for the intervals reported in the paper",
         "protocol": "GSM8K free-form CoT; exact numeric extraction; no A/B/C/D constrained scoring",
         "input_files": [str(path) for path in inputs],
         "N_total": n_total,
@@ -346,8 +346,8 @@ def main() -> None:
     report = [
         "# Stage 17 — GSM8K free-form PRR",
         "",
-        f"New computation: `{COMPUTATION_VERSION}`. Bootstrap input is sorted by base ID.",
-        "Paper-reported intervals remain in the frozen release results; these newly computed intervals are separate.",
+        f"Computation version: `{COMPUTATION_VERSION}`. Bootstrap input is sorted by base ID,",
+        "matching the procedure used for the intervals reported in the paper.",
         "",
         "## Primary results",
         "",

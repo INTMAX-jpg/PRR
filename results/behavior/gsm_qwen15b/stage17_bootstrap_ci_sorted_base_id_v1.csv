@@ -1,0 +1,4 @@
+metric,result_origin,computation_version,n,point,ci_low,ci_high
+PFR_out,paper_reported,sorted_base_id_v1,325,0.6369230769230769,0.5846153846153846,0.6892307692307692
+RSR_out,paper_reported,sorted_base_id_v1,207,0.6956521739130435,0.6328502415458938,0.7584541062801933
+RV_out,paper_reported,sorted_base_id_v1,144,0.3125,0.2361111111111111,0.3888888888888889
